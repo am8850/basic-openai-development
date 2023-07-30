@@ -1,0 +1,53 @@
+# https://learn.microsoft.com/en-us/azure/ai-services/openai/reference
+# https://platform.openai.com/tokenizer
+# https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-openai-api
+
+POST {{$dotenv %DAVINCI_OPENAI_FULL_ENDPOINT}} HTTP/1.1
+Content-Type: application/json
+api-key: {{$dotenv %DAVINCI_OPENAI_KEY}}
+
+{
+    "prompt": "What is the speed of light in kilometers per hour?",
+    "max_tokens": 100,
+    "temperature": 0.3,
+    "n":1
+}
+
+###
+POST {{$dotenv %DAVINCI_OPENAI_FULL_ENDPOINT}} HTTP/1.1
+Content-Type: application/json
+api-key: {{$dotenv %DAVINCI_OPENAI_KEY}}
+
+{
+    "prompt": ["What is the distance to the Moon in kilometers?"],
+    "max_tokens": 100,
+    "temperature": 0.3,
+    "n":1,
+    "stream": true
+}
+
+###
+
+POST {{$dotenv %DAVINCI_OPENAI_FULL_ENDPOINT}} HTTP/1.1
+Content-Type: application/json
+api-key: {{$dotenv %DAVINCI_OPENAI_KEY}}
+
+{
+    "prompt": "Write a blog about the Pakistan's history.",
+    "max_tokens": 50,
+    "temperature": 0.3
+}
+###
+
+POST {{$dotenv %DAVINCI_OPENAI_FULL_ENDPOINT}} HTTP/1.1
+Content-Type: application/json
+api-key: {{$dotenv %DAVINCI_OPENAI_KEY}}
+
+{
+    "messages": [
+        {"role":"system","content":"You are a general assistant"},
+        {"role":"user","content":"What is the speed of light?"}
+    ],
+    "max_tokens": 100,
+    "temperature": 0.3
+}
