@@ -2,24 +2,34 @@
 # https://platform.openai.com/tokenizer
 # https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-openai-api
 
-POST {{$dotenv %DAVINCI_OPENAI_FULL_ENDPOINT}} HTTP/1.1
+POST {{$dotenv GPT_OPENAI_FULL_ENDPOINT}} HTTP/1.1
+api-key: {{$dotenv %GPT_OPENAI_KEY}}
 Content-Type: application/json
-api-key: {{$dotenv %DAVINCI_OPENAI_KEY}}
 
 {
-    "prompt": "What is the speed of light in kilometers per hour?",
+    "messages": [
+        {
+            "role" : "user",
+            "content" : "What is the speed of light in kilometers per hour?"
+        }
+    ],
     "max_tokens": 100,
     "temperature": 0.3,
     "n":1
 }
 
 ###
-POST {{$dotenv %DAVINCI_OPENAI_FULL_ENDPOINT}} HTTP/1.1
+POST {{$dotenv GPT_OPENAI_FULL_ENDPOINT}} HTTP/1.1
+api-key: {{$dotenv %GPT_OPENAI_KEY}}
 Content-Type: application/json
-api-key: {{$dotenv %DAVINCI_OPENAI_KEY}}
 
 {
-    "prompt": ["What is the distance to the Moon in kilometers?"],
+    "messages": [
+        {
+            "role" : "user",
+            "content" : "What is the disntance to the Moon?"
+        }
+    ],
     "max_tokens": 100,
     "temperature": 0.3,
     "n":1,
@@ -28,20 +38,25 @@ api-key: {{$dotenv %DAVINCI_OPENAI_KEY}}
 
 ###
 
-POST {{$dotenv %DAVINCI_OPENAI_FULL_ENDPOINT}} HTTP/1.1
+POST {{$dotenv GPT_OPENAI_FULL_ENDPOINT}} HTTP/1.1
+api-key: {{$dotenv %GPT_OPENAI_KEY}}
 Content-Type: application/json
-api-key: {{$dotenv %DAVINCI_OPENAI_KEY}}
 
 {
-    "prompt": "Write a blog about the Pakistan's history.",
+    "messages": [
+        {
+            "role" : "user",
+            "content" : "Write a blog about Pakistan's history."
+        }
+    ],
     "max_tokens": 50,
     "temperature": 0.3
 }
 ###
 
-POST {{$dotenv %DAVINCI_OPENAI_FULL_ENDPOINT}} HTTP/1.1
+POST {{$dotenv GPT_OPENAI_FULL_ENDPOINT}} HTTP/1.1
+api-key: {{$dotenv %GPT_OPENAI_KEY}}
 Content-Type: application/json
-api-key: {{$dotenv %DAVINCI_OPENAI_KEY}}
 
 {
     "messages": [
