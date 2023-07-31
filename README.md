@@ -27,7 +27,7 @@ Updated data can be passed as context to answer a prompt.
 
 - Refer to best practices for prompt engineering below.
 
-## Basic ways of calling the APIs
+## Notebooks included in this repo to call the APIs
 
 ### No code
 
