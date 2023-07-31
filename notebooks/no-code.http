@@ -49,7 +49,7 @@ Content-Type: application/json
             "content" : "Write a blog about Pakistan's history."
         }
     ],
-    "max_tokens": 50,
+    "max_tokens": 100,
     "temperature": 0.3
 }
 ###
