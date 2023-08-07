@@ -1,5 +1,49 @@
 # Intro to Development with OpenAI APIs
 
+## Running the demos
+
+### `.env` file (secrets)
+
+- The demos load the endpoint and API keys via an the a `.env` file or by setting environment variables
+- The actual `.env` file is not stored on this repo
+- There's a `.env-sample` file in the repo
+- Rename the `.env-sample` file to `.env`
+- And add the endpoints and keys to the `.env` file
+- Alternatively, you can set environment variables:
+  - `export GPT_OPENAI_KEY=123`
+
+### Notebooks
+
+Requirements:
+
+- VS Code
+- Polyglot vs-code extension
+
+Notebooks:
+
+* `notebooks/simplest.ipynb`
+  * Davinci call using Azure OpenAI SDK
+* `notebooks/res-simple.ipynb`
+  * GPT call using models and HttpClient
+* `notebooks/sk-simple.ipynb`
+  * GPT call using semantic kernel
+* `notebooks/res-augmented.ipynb`
+  * GPT call using models and HttpClient
+
+### Csharp projects
+
+Requirement:
+
+- VS Code or Visual Studio
+- .NET 6 or 7
+
+Projects:
+
+- `csharp/simplest`
+  - Uses Azure.OpenAI SDK
+- `csharp/rest-simple`
+  - Uses straight REST with models and HttpClient
+
 ## Some OpenAI principles
 
 ### My opinion on using OpenAI APIs
